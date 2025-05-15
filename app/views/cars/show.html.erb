@@ -2,14 +2,31 @@
   <div class="card h-100 text-white bg-dark position-relative">
     <div class="position-relative">
       <%= image_tag "https://images.unsplash.com/photo-1588127333419-b9d7de223dcf?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" %>
+    </div>
       <div class="car-title">
         <%= "#{@car.brand}" %>
         <%= "#{@car.model}" %>
-      </div>
-      <div class="car-body">
         <p><strong>Fuel:</strong> <%= @car.fuel %></p>
-        <p><strong>Fuel:</strong> <%= @car.year %></p>
+        <p><strong>Year:</strong> <%= @car.year %></p>
+        <div class="col-12 col-sm-6">
+          <div class="bg-white rounded p-4 shadow-sm">
+          <h5 class="mb-3">Comment here...</h5>
+            <%= simple_form_for [@car, @review] do |f| %>
+              <div class="mb-3">
+                <%= f.input :comment, placeholder: "Comment here...", input_html: { class: 'form-control' } %>
+              </div>
+              <div class="mb-3">
+              <%= f.input :rating, as: :select, collection: (1..5), label: false, input_html: { class: 'form-control' } %>
+              </div>
+              <%= f.submit "Submit", class: "btn btn-info" %>
+            <% end %>
+            <ul class="list-group">
+              <% @car.reviews.each do |review| %>
+                <li class="list-group-item"><%= review.comment %></li>
+              <% end %>
+            </ul>
+          </div>
+        </div>
       </div>
-    </div>
   </div>
-</div>
+ </div>

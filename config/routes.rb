@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get "reviews/create"
   get "cars/index"
   get "cars/show"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
@@ -13,5 +14,7 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "posts#index"
-  resources :cars, only: [:index, :show]
+  resources :cars, only: [:index, :show] do
+    resources :reviews, only: [:new, :create]
+  end
 end
