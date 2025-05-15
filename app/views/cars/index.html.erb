@@ -1,21 +1,19 @@
-<div class="cards">
-  <div class="row row-cols-1 row-cols-md-3 g-4">
-    <% @cars.each do |car| %>
-      <div class="col-3 p-3 mb-2">
-        <div class="card h-100 text-white bg-dark position-relative">
-          <div class="position-relative">
-            <%= cl_image_tag("vllsznsefdgx7uxyem05",width: 590, height: 500, crop: :fill) %>
-            <div class="car-title">
-              <%= "#{car.brand} #{car.model}" %>
-            </div>
-          </div>
-          <div class="car-body">
-            <p><strong>Owner:</strong> <%= car.owner.nickname %></p>
-            <p><%= @custom_datetime.strftime("%B %d, %Y %H:%M:%S") %></p>
-            <%= link_to "Comments", car_path(car), class: "btn btn-info" %>
+<div class="cards" style="max-width: 700px; margin: 0 auto;">
+  <% @cars.each do |car| %>
+    <div class="mb-4 mt-4 mx-auto" style="width: 100%;">
+      <div class="card h-100 text-white bg-dark position-relative">
+        <div class="position-relative">
+          <%= cl_image_tag("vllsznsefdgx7uxyem05", width: 700, height: 500, crop: :fill, gravity: :auto) %>
+          <div class="car-title">
+            <%= "#{car.brand} #{car.model}" %>
           </div>
         </div>
+        <div class="car-body">
+          <p><strong>Owner:</strong> <%= car.owner.nickname %></p>
+          <p><%= @custom_datetime.strftime("%B %d, %Y %H:%M:%S") %></p>
+          <%= link_to "Comments", car_path(car), class: "btn btn-info" %>
+        </div>
       </div>
-    <% end %>
-  </div>
+    </div>
+  <% end %>
 </div>
