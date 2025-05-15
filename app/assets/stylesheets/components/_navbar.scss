@@ -1,12 +1,13 @@
-.navbar-lewagon {
-  justify-content: space-between;
-  background: white;
-}
+.navbar-cars {
+  background-color: #313235;
+  border-bottom: 1px solid #1c1c1d;
+  padding: 1rem 0;
 
-.navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
-}
+  .garage-navbar {
+   color: white
+  }
 
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
+  .btn-navbar{
+    color: rgba(255, 255, 255, 0.952)
+  }
 }

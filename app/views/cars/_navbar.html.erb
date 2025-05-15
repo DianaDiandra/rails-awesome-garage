@@ -1,0 +1,12 @@
+<div class="navbar navbar-expand-sm navbar-light navbar-cars">
+  <div class="container-fluid d-flex justify-content-between align-items-center">
+    <div class="d-flex align-items-center">
+      <%= cl_image_tag("qzprg5f83wymlhbe826x", width: 50, height: 50, crop: :fill, class: "d-inline-block align-top") %>
+      <h3 class="garage-navbar mb-0 ms-3">Awesome Garage</h3>
+    </div>
+    <div class="d-flex gap-3">
+      <%= link_to "Home", cars_path, class: "btn-navbar" %>
+      <%= link_to "My Garage", favourites_index_path, class: "btn-navbar" %>
+    </div>
+  </div>
+</div>

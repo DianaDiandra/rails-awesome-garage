@@ -1,20 +1,10 @@
 <div class="cards">
   <div class="row row-cols-1 row-cols-md-3 g-4">
-    <div class="cars-info mt-5 mb-4">
-      <div class="list-info d-flex justify-content-between align-items-center mt-5 mb-4">
-        <h3 class="cars-info-text mb-0">Awesome Garage</h3>
-        <div class="d-flex gap-2">
-          <%= image_tag "https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" %>
-          <%= link_to "Home", cars_path, class: "btn btn-info" %>
-          <%= link_to "My Garage", favourites_index_path, class: "btn btn-info" %>
-        </div>
-      </div>
-    </div>
     <% @cars.each do |car| %>
-      <div class="col">
+      <div class="col-3 p-3 mb-2">
         <div class="card h-100 text-white bg-dark position-relative">
           <div class="position-relative">
-            <%= image_tag "https://images.unsplash.com/photo-1588127333419-b9d7de223dcf?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" %>
+            <%= cl_image_tag("vllsznsefdgx7uxyem05",width: 590, height: 500, crop: :fill) %>
             <div class="car-title">
               <%= "#{car.brand} #{car.model}" %>
             </div>
