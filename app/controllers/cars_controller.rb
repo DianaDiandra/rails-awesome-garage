@@ -7,5 +7,6 @@ class CarsController < ApplicationController
     @car = Car.find(params[:id])
     @reviews = @car.reviews
     @review = Review.new
+    @favourite = Favourite.new
   end
 end

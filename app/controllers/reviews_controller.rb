@@ -1,5 +1,5 @@
 class ReviewsController < ApplicationController
-  before_action :set_car, only: %i[new create]
+  before_action :set_car, only: %i[create]
 
   def create
     @review = Review.new(review_params)

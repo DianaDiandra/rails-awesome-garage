@@ -3,6 +3,15 @@
     <div class="position-relative">
       <%= image_tag "https://images.unsplash.com/photo-1588127333419-b9d7de223dcf?q=80&w=2069&auto=format&fit=crop" %>
     </div>
+    <div>
+      <% if @car.favourites.any? %>
+        <p>This car is parked in your garage!</p>
+      <% else %>
+        <%= simple_form_for [@car, @favourite] do |f| %>
+          <%= f.submit "Add to Garage", class: "btn btn-info" %>
+        <% end %>
+      <% end %>
+    </div>
 
     <div class="car-title p-3">
       <h4><%= @car.brand %></h4>
@@ -12,8 +21,7 @@
 
       <div class="col-12 col-sm-6 mt-4">
         <div class="bg-white text-dark rounded p-4 shadow-sm">
-          <h5 class="mb-3">Add a Comment</h5>
-
+          <%# <h5 class="mb-3">Add a Comment</h5> %>
           <%= simple_form_for [@car, @review] do |f| %>
             <div class="mb-3">
               <%= f.input :comment, placeholder: "Comment here...", input_html: { class: 'form-control' } %>
