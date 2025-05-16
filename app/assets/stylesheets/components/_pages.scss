@@ -1,0 +1,44 @@
+.home-landing {
+  background-color: #010a1f;
+  color: white;
+  padding: 100px 0;
+}
+
+.home-card{
+  background-size: cover;
+  background-position: center;
+  height: 300px;  /* Increase height */
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.8);
+  border-radius: 5px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  text-align: center;
+  position: relative;
+}
+
+@media (max-width: 768px) {
+  .card-category {
+    height: 250px;  /* Adjust height for smaller screens */
+    font-size: 18px;  /* Slightly smaller text */
+  }
+}
+
+.scrolling-wrapper {
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+}
+
+.scrolling-wrapper .card {
+  scroll-snap-align: start;
+}
+
+.btn-purple {
+  background-color: rgb(116, 34, 116);
+}

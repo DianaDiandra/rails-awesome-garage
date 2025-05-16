@@ -1,0 +1,28 @@
+<div class="home-card mt-5" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cl_image_path("qm6lkrozkbr2mylvopiu", width: 1200, height: 400, crop: :fill, gravity: :center) %>)">
+  <div class="text-center p-5">
+    <h1 class="display-4">Welcome to Awesome Garage!</h1>
+    <p class="lead">Your personal garage with the cars of your dreams</p>
+    <%= link_to "Enter", cars_path, class: "btn btn-purple btn-lg mt-4" %>
+  </div>
+</div>
+
+<div class="container mt-5">
+  <h3 class="text-center mb-4 text-black"> Top Rated Reviews</h3>
+  <div class="row overflow-auto flex-nowrap px-3" style="scroll-snap-type: x mandatory;">
+    <% @five_star_reviews.each do |review| %>
+      <div class="col-md-4 col-10 mb-3" style="scroll-snap-align: start;">
+        <div class="card bg-dark text-white h-100 shadow-sm">
+          <div class="card-body">
+            <h5 class="card-title"><%= review.car.brand %> <%= review.car.model %></h5>
+            <p class="card-text"><%= review.comment %></p>
+            <div class="mt-2">
+              <% 5.times do %>
+                <i class="fas fa-star text-warning"></i>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
