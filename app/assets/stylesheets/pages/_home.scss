@@ -1,21 +1,52 @@
-.home-card{
+.home-card {
   background-size: cover;
   background-position: center;
-  height: 300px;  /* Increase height */
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   color: white;
-  font-size: 24px;
-  font-weight: bold;
-  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.8);
-  border-radius: 5px;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-  padding: 20px;
-  text-align: center;
-  position: relative;
+  min-height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+
+.card-home {
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+h3 {
+  margin-bottom: 1.5rem;
+  color: #000;
+  text-align: center;
+}
+
+.top-rated-reviews {
+  .scroll-container {
+    max-width: 960px; // Or any width you prefer, like 800px
+    margin: 0 auto;   // Centers the container
+    overflow-x: auto;
+    display: flex;
+    gap: 1rem;
+    scroll-snap-type: x mandatory;
+    padding: 0 1rem;
+
+    // Optional: maintain custom scrollbar
+    scrollbar-width: thin;
+    &::-webkit-scrollbar {
+      height: 8px;
+    }
+    &::-webkit-scrollbar-thumb {
+      background-color: #888;
+      border-radius: 4px;
+    }
+  }
+
+  .review-card {
+    flex: 0 0 auto;
+    scroll-snap-align: start;
+    max-width: 350px;
+  }
+}
+
 
 @media (max-width: 768px) {
   .home-card {

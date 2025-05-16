@@ -1,11 +1,3 @@
-.container {
-  display: grid;
-  gap: 1rem;
-  max-width: 100%; // make sure container fits screen width
-  margin: 0 auto;  // center container horizontally
-  padding: 0 1rem; // horizontal padding for small devices
-}
-
 // Smallest devices (extra small)
 @media (max-width: 575px) {
   .container {

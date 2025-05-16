@@ -1,4 +1,20 @@
-.card-image {
-  background-size: cover;
-  background-position: center;
-  }
+.custom-card {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.card-img {
+  display: block;
+  object-fit: cover;
+  filter: brightness(0.7);
+}
+
+
+.overlay-text {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 1rem;
+  color: white;
+  z-index: 2;
+}

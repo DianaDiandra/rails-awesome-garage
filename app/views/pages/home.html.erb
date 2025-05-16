@@ -6,14 +6,14 @@
   </div>
 </div>
 
-<div class="container mt-5">
-  <h3 class="text-center mb-4 text-black"> Top Rated Reviews</h3>
-  <div class="row overflow-auto flex-nowrap px-3" style="scroll-snap-type: x mandatory;">
+<div class="top-rated-reviews mt-5">
+  <h3 class="text-center mb-4 text-black">Top Rated Reviews</h3>
+  <div class="scroll-container">
     <% @five_star_reviews.each do |review| %>
-      <div class="col-md-4 col-10 mb-3" style="scroll-snap-align: start;">
+      <div class="review-card">
         <div class="card bg-dark text-white h-100 shadow-sm">
           <div class="card-body">
-            <h5 class="card-home"><%= review.car.brand %> <%= review.car.model %></h5>
+            <h5 class="card-title"><%= review.car.brand %> <%= review.car.model %></h5>
             <p class="card-text"><%= review.comment %></p>
             <div class="mt-2">
               <% 5.times do %>
@@ -26,3 +26,4 @@
     <% end %>
   </div>
 </div>
+
