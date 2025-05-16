@@ -1,7 +1,7 @@
 <div class="bg-light d-flex justify-content-center align-items-center min-vh-100">
   <div class="card custom-card shadow rounded overflow-hidden">
     <div class="position-relative">
-      <%= cl_image_tag("vllsznsefdgx7uxyem05", width: 720, height: 400, crop: :fill, gravity: :auto, class: "w-100 card-img") %>
+      <%= cl_image_tag(@car.image_url, class: "img-fluid", crop: :fill, gravity: :auto) if @car.image_url.present? %>
 
       <div class="overlay-text position-absolute top-0 end-0 p-3 text-white">
         <% if @car.favourites.any? %>

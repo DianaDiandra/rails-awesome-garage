@@ -9,7 +9,7 @@
             <div class="col">
               <div class="card custom-card d-flex flex-row align-items-center">
                 <div class="card-img-left">
-                  <%= cl_image_tag("vllsznsefdgx7uxyem05", width: 400, height: 200, crop: :fill, gravity: :auto) %>
+                  <%= cl_image_tag(car.image_url, class: "img-fluid", crop: :fill, gravity: :auto) if car.image_url.present? %>
                 </div>
 
                 <div class="card-body ps-3 flex-grow-1">

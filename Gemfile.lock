@@ -94,6 +94,7 @@ GEM
     concurrent-ruby (1.3.5)
     connection_pool (2.5.3)
     crass (1.0.6)
+    csv (3.3.4)
     date (3.4.1)
     debug (1.10.0)
       irb (~> 1.10)
@@ -105,6 +106,8 @@ GEM
     drb (2.2.1)
     erubi (1.13.1)
     execjs (2.10.0)
+    faker (3.5.1)
+      i18n (>= 1.8.11, < 2)
     faraday (2.13.1)
       faraday-net_http (>= 2.0, < 3.5)
       json
@@ -127,6 +130,10 @@ GEM
       sassc (~> 2.0)
     globalid (1.2.1)
       activesupport (>= 6.1)
+    httparty (0.23.1)
+      csv
+      mini_mime (>= 1.0.0)
+      multi_xml (>= 0.5.2)
     i18n (1.14.7)
       concurrent-ruby (~> 1.0)
     importmap-rails (2.1.0)
@@ -142,6 +149,8 @@ GEM
       actionview (>= 5.0.0)
       activesupport (>= 5.0.0)
     json (2.12.0)
+    jwt (2.10.1)
+      base64
     language_server-protocol (3.17.0.5)
     lint_roller (1.1.0)
     logger (1.7.0)
@@ -157,6 +166,9 @@ GEM
     mini_mime (1.1.5)
     minitest (5.25.5)
     msgpack (1.8.0)
+    multi_json (1.15.0)
+    multi_xml (0.7.2)
+      bigdecimal (~> 3.1)
     multipart-post (2.4.1)
     net-http (0.6.0)
       uri
@@ -186,6 +198,12 @@ GEM
       racc (~> 1.4)
     nokogiri (1.18.8-x86_64-linux-musl)
       racc (~> 1.4)
+    oauth2 (1.4.11)
+      faraday (>= 0.17.3, < 3.0)
+      jwt (>= 1.0, < 3.0)
+      multi_json (~> 1.3)
+      multi_xml (~> 0.5)
+      rack (>= 1.2, < 4)
     ostruct (0.6.1)
     parallel (1.27.0)
     parser (3.3.8.0)
@@ -310,6 +328,9 @@ GEM
     unicode-display_width (3.1.4)
       unicode-emoji (~> 4.0, >= 4.0.4)
     unicode-emoji (4.0.4)
+    unsplash (2.1.0)
+      httparty (~> 0.16)
+      oauth2 (~> 1)
     uri (1.0.3)
     useragent (0.16.11)
     web-console (4.2.1)
@@ -342,6 +363,7 @@ DEPENDENCIES
   cloudinary
   debug
   dotenv-rails
+  faker
   font-awesome-sass (~> 6.1)
   importmap-rails
   jbuilder
@@ -355,6 +377,7 @@ DEPENDENCIES
   stimulus-rails
   turbo-rails
   tzinfo-data
+  unsplash
   web-console
 
 BUNDLED WITH

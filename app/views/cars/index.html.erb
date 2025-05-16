@@ -4,7 +4,7 @@
       <div class="car-card-wrapper mb-5">
         <div class="card h-100 text-black position-relative">
           <div class="position relative">
-            <%= cl_image_tag("vllsznsefdgx7uxyem05", width: 700, height: 400, crop: :fill, gravity: :auto) %>
+           <%= cl_image_tag(car.image_url, class: "img-fluid", crop: :fill, gravity: :auto) if car.image_url.present? %>
 
             <div class="car-meta">
               <strong><%= "#{car.brand} #{car.model}" %></strong><br>
