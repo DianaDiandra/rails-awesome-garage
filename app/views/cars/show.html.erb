@@ -1,56 +1,55 @@
-<div class="col">
-  <div class="card h-100 text-white bg-dark position-relative">
-    <div class="position-relative">
-      <%= image_tag "https://images.unsplash.com/photo-1588127333419-b9d7de223dcf?q=80&w=2069&auto=format&fit=crop" %>
-    </div>
-    <div>
-      <% if @car.favourites.any? %>
-        <p>This car is parked in your garage!</p>
-      <% else %>
-        <%= simple_form_for [@car, @favourite] do |f| %>
-          <%= f.submit "Add to Garage", class: "btn btn-info" %>
-        <% end %>
-      <% end %>
-    </div>
-
-    <div class="car-title p-3">
-      <h4><%= @car.brand %></h4>
-      <h5><%= @car.model %></h5>
-      <p><strong>Fuel:</strong> <%= @car.fuel %></p>
-      <p><strong>Year:</strong> <%= @car.year %></p>
-
-      <div class="col-12 col-sm-6 mt-4">
-        <div class="bg-white text-dark rounded p-4 shadow-sm">
-          <%# <h5 class="mb-3">Add a Comment</h5> %>
-          <%= simple_form_for [@car, @review] do |f| %>
-            <div class="mb-3">
-              <%= f.input :comment, placeholder: "Comment here...", input_html: { class: 'form-control' } %>
-            </div>
-            <div class="mb-3">
-              <%= f.input :rating, as: :select, collection: (1..5), label: false, input_html: { class: 'form-control' } %>
-            </div>
-            <%= f.submit "Submit", class: "btn btn-info" %>
+<div class="bg-light py-5">
+  <div class="container">
+    <div class="card shadow rounded overflow-hidden" style="max-width: 720px; margin: 0 auto;">
+      <div class="card-image position-relative" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path("vllsznsefdgx7uxyem05", width: 720, height: 400, crop: :fill, gravity: :auto) %>');">
+        <div class="position-absolute top-0 end-0 p-3 text-white">
+          <% if @car.favourites.any? %>
+            <p class="mb-0">This car is parked in your garage!</p>
           <% end %>
-
-          <hr>
-
-          <h6>Reviews:</h6>
-          <ul class="list-group">
-            <% @car.reviews.each do |review| %>
-              <li class="list-group-item">
-                <strong><%= review.comment %></strong><br>
-                <div class="rating mt-1">
-                  <% review.rating.to_i.times do %>
-                    <i class="fas fa-star text-warning"></i>
-                  <% end %>
-                  <% (5 - review.rating.to_i).times do %>
-                    <i class="far fa-star text-warning"></i>
-                  <% end %>
-                </div>
-              </li>
-            <% end %>
-          </ul>
         </div>
+        <div style="height: 400px;"></div>
+      </div>
+
+      <div class="card-body bg-white text-dark">
+        <div class="row">
+          <div class="col-md-6">
+            <h5 class="text-danger"><strong><%= @car.brand %></strong></h5>
+            <p><%= @car.model %></p>
+            <p><%= @car.fuel %></p>
+            <p><%= @car.year %></p>
+          </div>
+
+          <div class="col-md-6">
+            <%= simple_form_for [@car, @review] do |f| %>
+              <div class="mb-3">
+                <%= f.input :comment, label: false, placeholder: "Comment here..", input_html: { class: "form-control" } %>
+              </div>
+              <div class="mb-3">
+                <%= f.input :rating, as: :select, collection: 1..5, label: false, input_html: { class: "form-select" } %>
+              </div>
+              <div class="mb-3 text-end">
+                <%= f.submit "Send", class: "btn btn-secondary" %>
+              </div>
+            <% end %>
+          </div>
+        </div>
+
+        <hr>
+
+        <h6>Reviews:</h6>
+        <ul class="list-group">
+          <% @car.reviews.each do |review| %>
+            <li class="list-group-item">
+              <strong><%= review.comment %></strong><br>
+              <% review.rating.to_i.times do %>
+                <i class="fas fa-star text-warning"></i>
+              <% end %>
+              <% (5 - review.rating.to_i).times do %>
+                <i class="far fa-star text-warning"></i>
+              <% end %>
+            </li>
+          <% end %>
+        </ul>
       </div>
     </div>
   </div>
