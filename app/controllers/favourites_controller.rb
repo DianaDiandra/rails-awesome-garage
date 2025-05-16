@@ -22,7 +22,7 @@ class FavouritesController < ApplicationController
   def destroy
     @favourite = Favourite.find(params[:id])
     @favourite.destroy
-    redirect_to favourites_path, notice: "Removed from your garage."
+    redirect_to favourites_index_path, notice: "Removed from your garage."
   end
 
   private

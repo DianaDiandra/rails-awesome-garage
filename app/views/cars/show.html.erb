@@ -7,7 +7,7 @@
         <% if @car.favourites.any? %>
           <p class="mb-0">This car is parked in your garage!</p>
         <% else %>
-          <%= link_to "Add to Garage", car_favourites_path(@car), class: "btn btn-outline-light btn-sm" %>
+          <%= link_to "Add to Garage", car_favourites_path(@car), data: { turbo_method: :post }, class: "btn btn-outline-light btn-sm" %>
         <% end %>
       </div>
     </div>
